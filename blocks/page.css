@@ -9,10 +9,3 @@
   width: 100%;
   margin: 0 auto;
 }
-
-@media screen and (max-width: 595px) {
-  .page__section {
-    margin-right: 0;
-    margin-left: 19px;
-  }
-}
