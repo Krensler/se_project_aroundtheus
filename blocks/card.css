@@ -2,8 +2,14 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  border-radius: 10px;
   list-style: none;
+  border-radius: 10px;
+}
+
+.card__image {
+  height: 282px;
+  width: 282px;
+  border-radius: 10px 10px 0 0;
 }
 
 .card__title {
@@ -27,25 +33,16 @@
   align-items: center;
 }
 
-.card__image {
-  height: 282px;
-  width: 282px;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-}
-
 .card__like-button {
-  background-position: center;
-  background-image: url(../images/like-button.svg);
-  height: 18px;
+  background: transparent url(../images/like-button.svg) center no-repeat;
   width: 21px;
-  transition: opacity 0.35s;
-  flex-shrink: 0;
+  height: 18px;
+  border-radius: 0 0 10px 10px;
   border: none;
-  border-radius: 0 0 10px;
 }
 
 .card__like-button:hover {
   cursor: pointer;
+  transition: opacity 0.2s;
   opacity: 0.5;
 }
