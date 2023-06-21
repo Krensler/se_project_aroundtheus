@@ -3,6 +3,8 @@
   align-items: center;
   padding-bottom: 40px;
   padding-top: 40px;
+  margin: 0 auto;
+  max-width: 880px;
 }
 
 .profile__image {
@@ -90,12 +92,12 @@
 
   .profile__description {
     width: 100%;
+    max-width: 282px;
+    line-height: 17px;
     text-align: center;
     font-size: 14px;
-    line-height: 17px;
     padding-bottom: 36px;
     padding-left: 0;
-    max-width: 282px;
   }
 
   .profile__image {
@@ -107,24 +109,24 @@
       "title button"
       "description description";
     grid-template-columns: auto auto;
-    row-gap: 10px;
-    column-gap: 16px;
-    margin: 0;
     text-align: right;
+    margin: 0;
+    align-items: center;
+    column-gap: 16px;
     align-items: center;
   }
 
   .profile__edit-button {
+    height: 18px;
+    width: 18px;
     position: relative;
     background-size: 7.5px 7.5px;
     top: 14px;
-    height: 18px;
-    width: 18px;
   }
 
   .profile__add-button {
     width: 100%;
-    max-width: 282px;
     margin-left: 0;
+    max-width: 282px;
   }
 }
