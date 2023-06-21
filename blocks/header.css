@@ -1,10 +1,9 @@
 .header {
-  background-color: black;
+  border-bottom: 1px solid rgba(84, 84, 84, 0.7);
+  color: white;
+  padding-top: 45px;
   max-width: 880px;
   min-height: 33px;
-  color: white;
-  padding-top: 42px;
-  border-bottom: 1px solid rgba(84, 84, 84, 0.7);
   width: 100%;
 }
 
