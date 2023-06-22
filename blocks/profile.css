@@ -16,11 +16,11 @@
 }
 
 .profile__info {
-  /*display: grid;
+  display: grid;
   grid-template-areas:
     "title button"
     "description description";
-  grid-template-columns: minmax(auto, 373px) auto;*/
+  grid-template-columns: minmax(auto, 373px) auto;
   align-items: center;
   grid-gap: 7px 18px;
 }
@@ -34,7 +34,6 @@
   white-space: nowrap;
   overflow: hidden;
   margin: 0;
-  grid-area: title;
 }
 
 .profile__edit-button {
@@ -107,10 +106,6 @@
   }
 
   .profile__info {
-    /*grid-template-areas:
-      "title button"
-      "description description";
-    grid-template-columns: auto auto;*/
     text-align: right;
     margin: 0;
     align-items: center;
@@ -119,14 +114,16 @@
     flex-wrap: wrap;
     max-width: 282px;
     justify-content: center;
+    position: relative;
   }
 
   .profile__edit-button {
     height: 18px;
     width: 18px;
-    position: relative;
+    position: absolute;
     background-size: 7.5px 7.5px;
-    top: 14px;
+    top: 29px;
+    right: 2px;
   }
 
   .profile__add-button {
