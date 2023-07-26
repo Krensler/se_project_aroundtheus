@@ -35,8 +35,8 @@ const initialCards = [
 /* -------------------------------------------------------------------------- */
 
 const profileEditButton = document.querySelector("#profile-edit-button");
-const profileEditModal = document.querySelector("#profileEditModal");
-const profileCloseButton = document.querySelector("#profile-edit-close-button");
+const profileEditModal = document.querySelector("#profile-edit-modal");
+const profileCloseButton = document.querySelector("#profile-close-button");
 
 profileEditButton.addEventListener("click", () => {
   profileEditModal.classList.add("modal_opened");
