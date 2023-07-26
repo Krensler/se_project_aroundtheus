@@ -31,6 +31,7 @@
             <button
               class="profile__edit-button"
               name="edit button"
+              id="profile-edit-button"
               type="button"
             ></button>
             <p class="profile__description">Explorer</p>
@@ -116,9 +117,9 @@
         <p class="footer__copyright">&copy; 2023 Around the U.S.</p>
       </footer>
     </div>
-    <div class="modal">
+    <div class="modal" id="profile-edit-modal">
       <div class="modal__container">
-        <button class="modal__close"></button>
+        <button class="modal__close" id="profile-close-button"></button>
         <h2 class="modal__heading">Edit Profile</h2>
         <form class="modal__form">
           <input
