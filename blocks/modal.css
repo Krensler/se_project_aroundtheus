@@ -48,6 +48,11 @@
   height: 40px;
 }
 
+.modal__close:hover {
+  opacity: 0.8;
+  transition: 0.2s;
+}
+
 .modal__form {
   display: flex;
   align-items: center;
@@ -91,6 +96,11 @@
   font-family: "Inter", Arial, "Times New Roman";
   font-size: 18px;
   line-height: 22px;
+}
+
+.modal__button:hover {
+  opacity: 0.5;
+  transition: 0.2s;
 }
 
 @media screen and (min-width: 320px) and (max-width: 880px) {
