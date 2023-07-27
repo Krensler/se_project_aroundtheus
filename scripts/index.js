@@ -99,7 +99,7 @@ profileCloseButton.addEventListener("click", () => {
 });
 
 profileEditForm.addEventListener("submit", (evt) => {
-  handleProfileFormSubmit(closePopup);
+  handleProfileFormSubmit(evt);
 });
 
 initialCards.forEach((cardData) => {
