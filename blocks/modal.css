@@ -96,6 +96,7 @@
   font-family: "Inter", Arial, "Times New Roman";
   font-size: 18px;
   line-height: 22px;
+  cursor: pointer;
 }
 
 .modal__button:hover {
