@@ -78,6 +78,43 @@
         </form>
       </div>
     </div>
+    <!-- Add card Modal -->
+    <div class="modal" id="card-add-modal">
+      <div class="modal__container">
+        <button type="button" class="modal__close"></button>
+        <h2 class="modal__heading">New Place</h2>
+        <form class="modal__form">
+          <input
+            class="modal__form modal__form-input"
+            id="card-add-title"
+            type="text"
+            placeholder="Name"
+            name="title"
+            required
+          />
+          <input
+            class="modal__form modal__form-input"
+            type="text"
+            id="card-add-link"
+            placeholder="Link"
+            name="link"
+          />
+          <button type="submit" class="modal__button">Save</button>
+        </form>
+      </div>
+    </div>
+    <div class="modal" id="preview-modal-image">
+      <div class="modal__image-container">
+        <img
+          class="modal__image"
+          id="modal-image"
+          alt="image preview"
+          src="#"
+        />
+        <p class="modal__text" id="modal-text"></p>
+        <button class="modal__close" type="button"></button>
+      </div>
+    </div>
     <template id="card-template">
       <li class="card">
         <img class="card__image" src="" alt="" />

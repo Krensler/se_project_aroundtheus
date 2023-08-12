@@ -44,9 +44,17 @@ const profileDescriptionInput = document.querySelector(
   "#profile-description-input"
 );
 const profileEditForm = document.querySelector(".modal__form");
+const cardAddModal = document.querySelector("#card-add-modal");
 const cardListEl = document.querySelector(".cards__list");
 const cardTemplate =
   document.querySelector("#card-template").content.firstElementChild;
+const addNewCardButton = document.querySelector(".profile__add-button");
+
+const cardAddTitle = document.querySelector("#card-add-title");
+const cardAddLink = document.querySelector("#card-add-link");
+const previewModalImage = document.querySelector("#preview-modal-image");
+const modalImageEl = document.querySelector("#modal-image");
+const modalTextEl = document.querySelector("#modal-text");
 
 /* -------------------------------------------------------------------------- */
 /*                                  Functions                                 */
@@ -64,16 +72,29 @@ function getCardElement(cardData) {
   const cardElement = cardTemplate.cloneNode(true);
   const cardImageEl = cardElement.querySelector(".card__image");
   const cardTitleEl = cardElement.querySelector(".card__image-title");
+  const cardLikeButton = cardElement.querySelector(".card__like-button");
+  const cardDeleteButton = cardElement.querySelector(".card__delete-button");
+
+  cardLikeButton.addEventListener("click", () => {
+    cardLikeButton.classList.toggle("card__like-button_active");
+  });
+
+  cardDeleteButton.addEventListener("click", () => {
+    cardElement.remove("cardElement");
+  });
+
+  cardImageEl.addEventListener("click", () => {
+    openPopup(previewModalImage);
+    modalImageEl.src = cardData.link;
+    modalImageEl.alt = cardData.name;
+    modalTextEl.textContent = cardData.name;
+  });
+
   cardImageEl.src = cardData.link;
   cardImageEl.alt = cardData.name;
   cardTitleEl.textContent = cardData.name;
+
   return cardElement;
-  // clone the template element with all its content and store it in a cardElement variable
-  // access the card title and image and store them in variables
-  // set the path to the image to the link field of the object
-  // set the image alt text to the name field of the object
-  // set the card title to the name field of the object, too
-  // return the ready HTML element with the filled-in data
 }
 
 /* -------------------------------------------------------------------------- */
@@ -87,9 +108,27 @@ function handleProfileFormSubmit(evt) {
   closePopup();
 }
 
+function handleCardAddSubmit(evt) {
+  evt.preventDefault();
+  cardListEl.prepend(
+    createCardElement({
+      link: cardAddLink.value,
+      name: cardAddTitle.value,
+    })
+  );
+  evt.target.reset();
+  closePopup(cardAddModal);
+}
+
+initialCards.forEach((cardData) => {
+  const cardElement = createCardElement(cardData);
+  cardListEl.prepend(cardElement);
+});
+
 /* -------------------------------------------------------------------------- */
 /*                               Event Listeners                              */
 /* -------------------------------------------------------------------------- */
+
 profileEditButton.addEventListener("click", () => {
   openPopup();
 });
@@ -100,6 +139,14 @@ profileCloseButton.addEventListener("click", () => {
 
 profileEditForm.addEventListener("submit", (evt) => {
   handleProfileFormSubmit(evt);
+});
+
+addNewCardButton.addEventListener("click", () => {
+  openPopup(cardAddModal);
+});
+
+modalImageEl.addEventListener("click", () => {
+  openModal(imageModal);
 });
 
 initialCards.forEach((cardData) => {
