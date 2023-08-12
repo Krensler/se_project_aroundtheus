@@ -80,7 +80,7 @@ function getCardElement(cardData) {
   });
 
   cardDeleteButton.addEventListener("click", () => {
-    cardElement.remove("cardElement");
+    cardElement.remove("modal_opened");
   });
 
   cardImageEl.addEventListener("click", () => {
@@ -120,10 +120,10 @@ function handleCardAddSubmit(evt) {
   closePopup(cardAddModal);
 }
 
-initialCards.forEach((cardData) => {
-  const cardElement = createCardElement(cardData);
+function renderCard(cardData) {
+  const cardElement = getCardElement(cardData);
   cardListEl.prepend(cardElement);
-});
+}
 
 /* -------------------------------------------------------------------------- */
 /*                               Event Listeners                              */
