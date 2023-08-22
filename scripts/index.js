@@ -53,7 +53,7 @@ const profileTitle = document.querySelector(".profile__title");
 const profileDescription = document.querySelector(".profile__description");
 const addNewCardButton = document.querySelector(".profile__add-button");
 const addNewCardCloseButton = cardAddModal.querySelector(
-  "add-new-card-close-button"
+  "#add-new-card-close-button"
 );
 
 /* -------------------------------- Form Data ------------------------------- */
@@ -130,7 +130,7 @@ function handleProfileFormSubmit(evt) {
 function handleCardAddSubmit(evt) {
   evt.preventDefault();
   cardListEl.prepend(
-    createCardElement({
+    getCardElement({
       link: cardAddLink.value,
       name: cardAddTitle.value,
     })
