@@ -55,6 +55,9 @@ const addNewCardButton = document.querySelector(".profile__add-button");
 const addNewCardCloseButton = cardAddModal.querySelector(
   "#add-new-card-close-button"
 );
+const previewModalCloseButton = previewModalImage.querySelector(
+  "#preview-modal-close-button"
+);
 
 /* -------------------------------- Form Data ------------------------------- */
 const profileTitleInput = document.querySelector("#profile-title-input");
@@ -69,18 +72,9 @@ const modalTextEl = document.querySelector("#modal-text");
 /* -------------------------------------------------------------------------- */
 /*                                  Functions                                 */
 /* -------------------------------------------------------------------------- */
-/*function openModal() {
-  profileTitleInput.value = profileTitle.textContent;
-  profileDescriptionInput.value = profileDescription.textContent;
-  profileEditModal.classList.add("modal_opened");
-}*/
 
 function openModal(Modal) {
   Modal.classList.add("modal_opened");
-}
-
-function closeModal() {
-  profileEditModal.classList.remove("modal_opened");
 }
 
 function closeModal(Modal) {
@@ -92,15 +86,15 @@ function getCardElement(cardData) {
   const cardImageEl = cardElement.querySelector(".card__image");
   const cardTitleEl = cardElement.querySelector(".card__image-title");
   const cardLikeButton = cardElement.querySelector(".card__like-button");
-  /*const cardDeleteButton = cardElement.querySelector(".card__delete-button");*/
+  const cardDeleteButton = cardElement.querySelector(".card__delete-button");
 
   cardLikeButton.addEventListener("click", () => {
     cardLikeButton.classList.toggle("card__like-button_active");
   });
 
-  /*cardDeleteButton.addEventListener("click", () => {
-    cardElement.remove("modal_opened");
-  });*/
+  cardDeleteButton.addEventListener("click", () => {
+    cardElement.remove();
+  });
 
   cardImageEl.addEventListener("click", () => {
     openModal(previewModalImage);
@@ -170,6 +164,10 @@ addNewCardCloseButton.addEventListener("click", () => {
 
 modalImageEl.addEventListener("click", () => {
   openModal(previewModalImage);
+});
+
+previewModalCloseButton.addEventListener("click", () => {
+  closeModal(previewModalImage);
 });
 
 initialCards.forEach((cardData) => {

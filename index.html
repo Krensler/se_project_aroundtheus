@@ -116,11 +116,16 @@
           src="#"
         />
         <p class="modal__text" id="modal-text"></p>
-        <button class="modal__close" type="button"></button>
+        <button
+          class="modal__close"
+          type="button"
+          id="preview-modal-close-button"
+        ></button>
       </div>
     </div>
     <template id="card-template">
       <li class="card">
+        <button class="card__delete-button" type="button"></button>
         <img class="card__image" src="" alt="" />
         <div class="card__description">
           <h2 class="card__image-title"></h2>
