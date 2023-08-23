@@ -42,6 +42,7 @@ const cardListEl = document.querySelector(".cards__list");
 const profileEditForm = document.querySelector(".modal__form");
 const profileEditModal = document.querySelector("#profile-edit-modal");
 const cardAddModal = document.querySelector("#card-add-modal");
+const addNewCardEditForm = document.querySelector(".modal__form");
 const previewModalImage = document.querySelector("#preview-modal-image");
 
 /* ----------------------- Buttons and other DOM nodes ---------------------- */
@@ -160,6 +161,10 @@ addNewCardButton.addEventListener("click", () => {
 
 addNewCardCloseButton.addEventListener("click", () => {
   closeModal(cardAddModal);
+});
+
+addNewCardEditForm.addEventListener("submit", (evt) => {
+  handleCardAddSubmit(evt);
 });
 
 modalImageEl.addEventListener("click", () => {
