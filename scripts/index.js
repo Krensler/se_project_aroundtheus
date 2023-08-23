@@ -74,12 +74,12 @@ const modalTextEl = document.querySelector("#modal-text");
 /*                                  Functions                                 */
 /* -------------------------------------------------------------------------- */
 
-function openModal(Modal) {
-  Modal.classList.add("modal_opened");
+function openModal(modal) {
+  modal.classList.add("modal_opened");
 }
 
-function closeModal(Modal) {
-  Modal.classList.remove("modal_opened");
+function closeModal(modal) {
+  modal.classList.remove("modal_opened");
 }
 
 function getCardElement(cardData) {
@@ -151,9 +151,7 @@ profileModalCloseButton.addEventListener("click", () => {
   closeModal(profileEditModal);
 });
 
-profileEditForm.addEventListener("submit", (evt) => {
-  handleProfileFormSubmit(evt);
-});
+profileEditForm.addEventListener("submit", handleProfileFormSubmit);
 
 addNewCardButton.addEventListener("click", () => {
   openModal(cardAddModal);
@@ -163,9 +161,7 @@ addNewCardCloseButton.addEventListener("click", () => {
   closeModal(cardAddModal);
 });
 
-addNewCardEditForm.addEventListener("submit", (evt) => {
-  handleCardAddSubmit(evt);
-});
+addNewCardEditForm.addEventListener("submit", handleCardAddSubmit);
 
 modalImageEl.addEventListener("click", () => {
   openModal(previewModalImage);
@@ -175,7 +171,4 @@ previewModalCloseButton.addEventListener("click", () => {
   closeModal(previewModalImage);
 });
 
-initialCards.forEach((cardData) => {
-  const cardElement = getCardElement(cardData);
-  cardListEl.prepend(cardElement);
-});
+initialCards.forEach(renderCard);
