@@ -126,8 +126,8 @@ function handleCardAddSubmit(evt) {
   evt.preventDefault();
   cardListEl.prepend(
     getCardElement({
-      link: cardAddLink.value,
       name: cardAddTitle.value,
+      link: cardAddLink.value,
     })
   );
   evt.target.reset();
