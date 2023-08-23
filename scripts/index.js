@@ -39,10 +39,10 @@ const cardTemplate = document
 
 /* -------------------------------- Wrappers -------------------------------- */
 const cardListEl = document.querySelector(".cards__list");
-const profileEditForm = document.querySelector(".modal__form");
+const profileEditForm = document.querySelector("#edit-profile-form");
 const profileEditModal = document.querySelector("#profile-edit-modal");
 const cardAddModal = document.querySelector("#card-add-modal");
-const addNewCardEditForm = document.querySelector(".modal__form");
+const addNewCardEditForm = document.querySelector("#add-card-form");
 const previewModalImage = document.querySelector("#preview-modal-image");
 
 /* ----------------------- Buttons and other DOM nodes ---------------------- */
