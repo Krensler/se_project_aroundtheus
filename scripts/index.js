@@ -144,6 +144,8 @@ function renderCard(cardData) {
 /* -------------------------------------------------------------------------- */
 
 profileEditButton.addEventListener("click", () => {
+  profileTitleInput.value = profileTitle.textContent;
+  profileDescriptionInput.value = profileDescription.textContent;
   openModal(profileEditModal);
 });
 

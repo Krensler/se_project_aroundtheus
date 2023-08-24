@@ -128,13 +128,15 @@
     width: 282px;
     height: 322px;
     border: 1px;
+    padding-right: 22px;
+    padding-left: 22px;
   }
 
   .modal__close {
     height: 26px;
     width: 26px;
-    bottom: calc(100% + 5px);
-    left: calc(100% + 5px);
+    bottom: calc(100% + 17px);
+    left: calc(100% - 35px);
   }
 
   .modal__heading {
