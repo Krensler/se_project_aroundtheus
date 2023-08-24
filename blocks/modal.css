@@ -123,23 +123,6 @@
   text-align: left;
 }
 
-/* @media screen and (min-width: 320px) and (max-width: 581px) {
-  .modal__container {
-    width: 282px;
-    height: 322px;
-    top: 123px;
-    left: 22px;
-    border: 1px;
-  }
-
-  .modal__close {
-    height: 26px;
-    width: 26px;
-    bottom: calc(100% + 5px);
-    left: calc(100% + 5px);
-  }
-} */
-
 @media screen and (max-width: 581px) {
   .modal__container {
     width: 282px;
