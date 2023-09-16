@@ -77,15 +77,24 @@ const modalTextEl = document.querySelector("#modal-text");
 function openModal(modal) {
   modal.classList.add("modal_opened");
   document.addEventListener("keydown", closeWithEscape);
+  document.addEventListener("click", closeModalOverlay);
 }
 
 function closeModal(modal) {
   modal.classList.remove("modal_opened");
   document.removeEventListener("keydown", closeWithEscape);
+  document.removeEventListener("click", closeModalOverlay);
 }
 
 function closeWithEscape(evt) {
   if (evt.key === "Escape") {
+    const openModal = document.querySelector(".modal_opened");
+    closeModal(openModal);
+  }
+}
+
+function closeModalOverlay(evt) {
+  if (evt.target === "click") {
     const openModal = document.querySelector(".modal_opened");
     closeModal(openModal);
   }
