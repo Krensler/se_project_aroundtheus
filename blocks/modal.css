@@ -118,6 +118,10 @@
   border: 2px solid #d3d3d3;
 }
 
+.modal__button_disabled:hover {
+  opacity: 1;
+}
+
 .modal__image {
   max-width: 75vw;
   max-height: 75vh;

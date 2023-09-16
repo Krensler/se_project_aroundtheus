@@ -18,9 +18,10 @@ function hideInputError(formElement, inputElement, options) {
 
 function checkInputValidity(formElement, inputElement, options) {
   if (!inputElement.validity.valid) {
-    return showInputError(formElement, inputElement, options);
+    showInputError(formElement, inputElement, options);
+  } else {
+    hideInputError(formElement, inputElement, options);
   }
-  hideInputError(formElement, inputElement, options);
 }
 
 function hasInvalidInput(inputList) {
