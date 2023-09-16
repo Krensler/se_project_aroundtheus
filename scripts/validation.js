@@ -40,9 +40,10 @@ function enableButton(submitButton, options) {
 
 function toggleButtonState(inputElements, submitButton, options) {
   if (hasInvalidInput(inputElements)) {
-    return disableButton(submitButton, options);
+    disableButton(submitButton, options);
+  } else {
+    enableButton(submitButton, options);
   }
-  enableButton(submitButton, options);
 }
 
 function setEventListeners(formElement, options) {
