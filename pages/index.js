@@ -1,3 +1,5 @@
+import Card from "..components/Card.js";
+
 const initialCards = [
   {
     name: "Yosemite Valley",
@@ -73,6 +75,20 @@ const modalTextEl = document.querySelector("#modal-text");
 /* -------------------------------------------------------------------------- */
 /*                                  Functions                                 */
 /* -------------------------------------------------------------------------- */
+const cardData = {
+  name: cardAddTitle.value,
+  link: cardAddLink.value,
+};
+
+initialCards.forEach((cardData) => {
+  const cardElement = createCard(cardData, "#card-template");
+  cardListEl.append(cardElement);
+});
+
+function createCard(cardData, cardSelector) {
+  const cardElement = new Card(cardData, cardSelector);
+  return cardElement.getView();
+}
 
 function openModal(modal) {
   modal.classList.add("modal_opened");
