@@ -56,7 +56,7 @@ export default class FormValidator {
     this._submitButton.disabled = false;
   }
 
-  toggleButtonState() {
+  _toggleButtonState() {
     if (this._hasInvalidInput(this._inputElements)) {
       this._disableButton();
     } else {

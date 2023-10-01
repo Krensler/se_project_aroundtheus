@@ -185,7 +185,7 @@ function handleCardAddSubmit(evt) {
 
   cardAddTitle.value = "";
   cardAddLink.value = "";
-  addFormValidator.toggleButtonState();
+  addFormValidator._toggleButtonState();
 }
 
 /* function renderCard(cardData) {
