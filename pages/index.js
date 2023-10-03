@@ -179,7 +179,7 @@ function handleCardAddSubmit(evt) {
 
   cardAddTitle.value = "";
   cardAddLink.value = "";
-  addFormValidator._toggleButtonState();
+  addFormValidator.toggleButtonState();
 }
 
 /* function renderCard(cardData) {
@@ -224,7 +224,5 @@ modalImageEl.addEventListener("click", () => {
 previewModalCloseButton.addEventListener("click", () => {
   closeModal(previewModalImage);
 });
-
-initialCards.forEach((cardData) => renderCard(cardData, cardListEl));
 
 export { openModal };
