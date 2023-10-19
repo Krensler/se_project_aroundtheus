@@ -35,9 +35,6 @@ const initialCards = [
 /* -------------------------------------------------------------------------- */
 /*                                  Elements                                  */
 /* -------------------------------------------------------------------------- */
-/*const cardTemplate = document
-  .querySelector("#card-template")
-  .content.querySelector(".card");*/
 
 /* -------------------------------- Wrappers -------------------------------- */
 const cardListEl = document.querySelector(".cards__list");
@@ -130,35 +127,6 @@ function closeModalOnRemoteClick(evt) {
   }
 }
 
-/* function getCardElement(cardData) {
-  const cardElement = cardTemplate.cloneNode(true);
-  const cardImageEl = cardElement.querySelector(".card__image");
-  const cardTitleEl = cardElement.querySelector(".card__image-title");
-  const cardLikeButton = cardElement.querySelector(".card__like-button");
-  const cardDeleteButton = cardElement.querySelector(".card__delete-button");
-
-  cardLikeButton.addEventListener("click", () => {
-    cardLikeButton.classList.toggle("card__like-button_active");
-  });
-
-  cardDeleteButton.addEventListener("click", () => {
-    cardElement.remove();
-  });
-
-  cardImageEl.addEventListener("click", () => {
-    openModal(previewModalImage);
-    modalImageEl.src = cardData.link;
-    modalImageEl.alt = cardData.name;
-    modalTextEl.textContent = cardData.name;
-  });
-
-  cardImageEl.src = cardData.link;
-  cardImageEl.alt = cardData.name;
-  cardTitleEl.textContent = cardData.name;
-
-  return cardElement;
-}*/
-
 /* -------------------------------------------------------------------------- */
 /*                               Event Handlers                               */
 /* -------------------------------------------------------------------------- */
@@ -181,11 +149,6 @@ function handleCardAddSubmit(evt) {
   cardAddLink.value = "";
   addFormValidator.toggleButtonState();
 }
-
-/* function renderCard(cardData) {
-  const cardElement = getCardElement(cardData);
-  cardListEl.prepend(cardElement);
-}  */
 
 /* -------------------------------------------------------------------------- */
 /*                               Event Listeners                              */
