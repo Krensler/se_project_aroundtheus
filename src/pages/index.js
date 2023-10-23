@@ -1,5 +1,36 @@
+import "../pages/index.css";
 import Card from "../components/Card.js";
 import FormValidator from "../components/FormValidator.js";
+import Popup from "../components/Popup.js";
+import PopupWithForm from "../components/PopupWithForm.js";
+import PopupWithImage from "../components/PopupWithImage.js";
+import Section from "../components/Section.js";
+import UserInfo from "../components/UserInfo.js";
+import { openModal, closeModal } from "../utils/utils";
+import {
+  initialCards,
+  cardListEl,
+  profileEditForm,
+  profileEditModal,
+  cardAddModal,
+  addNewCardEditForm,
+  previewModalImage,
+  profileEditButton,
+  profileModalCloseButton,
+  profileTitle,
+  profileDescription,
+  addNewCardButton,
+  addNewCardCloseButton,
+  previewModalCloseButton,
+  profileTitleInput,
+  profileDescriptionInput,
+  cardAddTitle,
+  cardAddLink,
+  settings,
+} from "../utils/Constants.js";
+
+/*  In Constatnts.js
+
 const initialCards = [
   {
     name: "Yosemite Valley",
@@ -37,6 +68,7 @@ const initialCards = [
 /* -------------------------------------------------------------------------- */
 
 /* -------------------------------- Wrappers -------------------------------- */
+/*
 const cardListEl = document.querySelector(".cards__list");
 const profileEditForm = document.querySelector("#edit-profile-form");
 const profileEditModal = document.querySelector("#profile-edit-modal");
@@ -45,6 +77,7 @@ const addNewCardEditForm = document.querySelector("#add-card-form");
 const previewModalImage = document.querySelector("#preview-modal-image");
 
 /* ----------------------- Buttons and other DOM nodes ---------------------- */
+/*
 const profileEditButton = document.querySelector("#profile-edit-button");
 const profileModalCloseButton = profileEditModal.querySelector(
   "#profile-close-button"
@@ -60,6 +93,7 @@ const previewModalCloseButton = previewModalImage.querySelector(
 );
 
 /* -------------------------------- Form Data ------------------------------- */
+/*
 const profileTitleInput = document.querySelector("#profile-title-input");
 const profileDescriptionInput = document.querySelector(
   "#profile-description-input"
@@ -72,6 +106,7 @@ const cardAddLink = document.querySelector("#card-add-link");
 /* -------------------------------------------------------------------------- */
 /*                                  Functions                                 */
 /* -------------------------------------------------------------------------- */
+/*
 const settings = {
   formSelector: ".modal__form",
   inputSelector: ".modal__form-input",
@@ -80,6 +115,10 @@ const settings = {
   inputErrorClass: "modal__form-input_type_error",
   errorClass: "modal__error_visible",
 };
+*/
+
+const cardAddModal = new PopupWithForm("#card-add-modal", handleCardAddSubmit);
+cardAddModal.setEventListeners();
 
 const editFormValidator = new FormValidator(settings, profileEditForm);
 editFormValidator.enableValidation();
@@ -102,6 +141,8 @@ function renderCard(cardData, cardsListElement) {
   cardsListElement.prepend(card);
 }
 
+/*  In utils.js
+
 function openModal(modal) {
   modal.classList.add("modal_opened");
   document.addEventListener("keydown", closeWithEscape);
@@ -113,6 +154,7 @@ function closeModal(modal) {
   document.removeEventListener("keydown", closeWithEscape);
   modal.removeEventListener("mousedown", closeModalOnRemoteClick);
 }
+
 
 function closeWithEscape(evt) {
   if (evt.key === "Escape") {
@@ -127,6 +169,7 @@ function closeModalOnRemoteClick(evt) {
   }
 }
 
+*/
 /* -------------------------------------------------------------------------- */
 /*                               Event Handlers                               */
 /* -------------------------------------------------------------------------- */
@@ -158,6 +201,11 @@ profileEditButton.addEventListener("click", () => {
   profileTitleInput.value = profileTitle.textContent;
   profileDescriptionInput.value = profileDescription.textContent;
   openModal(profileEditModal);
+  const popupForm = new PopupWithForms({
+    popupSelector: "#profile-edit-modal",
+    handleFormSubmit: handleProfileFormSubmit,
+  });
+  popupForm.open();
 });
 
 profileModalCloseButton.addEventListener("click", () => {
