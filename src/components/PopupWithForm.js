@@ -26,8 +26,3 @@ export default class PopupWithForm extends Popup {
     super.close();
   }
 }
-
-const newCardPopup = new PopupWithForm("#card-add-modal", () => {});
-newCardPopup.open();
-
-newCardPopup.close;

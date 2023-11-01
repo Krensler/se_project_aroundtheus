@@ -117,8 +117,32 @@ const settings = {
 };
 */
 
+//
+
 const cardAddModal = new PopupWithForm("#card-add-modal", handleCardAddSubmit);
 cardAddModal.setEventListeners();
+
+const profileEditModal = new PopupWithForm("#profile-edit-modal", (data) => {
+  userInfo.setUserInfo(data);
+  profileEditModal.close();
+});
+profileEditModal.setEventListeners();
+
+const userInfo = new UserInfo(".profile__title", ".profile__description");
+
+const imagePreviewModal = new PopupWithImage(
+  "#preview-modal-image",
+  handleImageClick
+);
+imagePreviewModal.setEventListeners();
+
+const cardSection = new Section(
+  { items: initialCards, renderer: renderCard(item) },
+  ".cards__list"
+);
+cardSection.renderItems();
+
+// FORM VALIDATORS
 
 const editFormValidator = new FormValidator(settings, profileEditForm);
 editFormValidator.enableValidation();
@@ -134,6 +158,11 @@ initialCards.forEach((cardData) => {
 function createCard(cardData, cardSelector) {
   const cardElement = new Card(cardData, cardSelector);
   return cardElement.getView();
+}
+
+function renderCard(cardData) {
+  const card = new Card(cardData, "#card-template", handleImageClick);
+  return card.getView();
 }
 
 function renderCard(cardData, cardsListElement) {

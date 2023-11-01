@@ -1,8 +1,4 @@
-import { openModal } from "../pages/index.js";
-
-const previewModalImage = document.querySelector("#preview-modal-image");
-const modalTextEl = document.querySelector("#modal-text");
-const modalImageEl = document.querySelector("#modal-image");
+import { openModal, handleImageClick } from "../pages/index.js";
 
 export default class Card {
   constructor({ name, link }, cardSelector, handleImageClick) {

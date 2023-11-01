@@ -68,6 +68,7 @@ export const cardAddTitle = document.querySelector("#card-add-title");
 export const cardAddLink = document.querySelector("#card-add-link");
 // const modalImageEl = document.querySelector("#modal-image");
 // const modalTextEl = document.querySelector("#modal-text");
+const previewModalImage = document.querySelector("#preview-modal-image");
 
 /* -------------------------------------------------------------------------- */
 /*                                  Functions                                 */
