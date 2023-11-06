@@ -11,12 +11,9 @@ import {
   initialCards,
   cardListEl,
   profileEditForm,
-  profileEditModal,
-  cardAddModal,
   addNewCardEditForm,
   previewModalImage,
   profileEditButton,
-  profileModalCloseButton,
   profileTitle,
   profileDescription,
   addNewCardButton,
@@ -27,6 +24,8 @@ import {
   cardAddTitle,
   cardAddLink,
   settings,
+  modalImageEl,
+  modalTextEl,
 } from "../utils/Constants.js";
 
 /*  In Constatnts.js
@@ -155,6 +154,16 @@ initialCards.forEach((cardData) => {
   cardListEl.append(cardElement);
 });
 
+// FUNCTIONS
+
+function handleImageClick(cardData) {
+  const cardData = {
+    link: cardData.src,
+    name: cardData.alt,
+  };
+  imagePreviewModal.open(cardData);
+}
+
 function createCard(cardData, cardSelector) {
   const cardElement = new Card(cardData, cardSelector);
   return cardElement.getView();
@@ -162,7 +171,8 @@ function createCard(cardData, cardSelector) {
 
 function renderCard(cardData) {
   const card = new Card(cardData, "#card-template", handleImageClick);
-  return card.getView();
+  const cardElement = card.getView();
+  cardListEl.prepend(cardElement);
 }
 
 function renderCard(cardData, cardsListElement) {
@@ -237,9 +247,9 @@ profileEditButton.addEventListener("click", () => {
   popupForm.open();
 });
 
-profileModalCloseButton.addEventListener("click", () => {
-  closeModal(profileEditModal);
-});
+// profileModalCloseButton.addEventListener("click", () => {
+//   closeModal(profileEditModal);
+// });
 
 profileEditForm.addEventListener("submit", handleProfileFormSubmit);
 
@@ -247,11 +257,11 @@ addNewCardButton.addEventListener("click", () => {
   openModal(cardAddModal);
 });
 
-addNewCardCloseButton.addEventListener("click", () => {
-  closeModal(cardAddModal);
-});
+// addNewCardCloseButton.addEventListener("click", () => {
+//  closeModal(cardAddModal);
+// });
 
-addNewCardEditForm.addEventListener("submit", handleCardAddSubmit);
+// addNewCardEditForm.addEventListener("submit", handleCardAddSubmit);
 
 /*
 

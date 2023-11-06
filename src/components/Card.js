@@ -1,5 +1,3 @@
-import { openModal, handleImageClick } from "../pages/index.js";
-
 export default class Card {
   constructor({ name, link }, cardSelector, handleImageClick) {
     this._name = name;

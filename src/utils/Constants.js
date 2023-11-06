@@ -52,9 +52,9 @@ export const profileDescription = document.querySelector(
   ".profile__description"
 );
 export const addNewCardButton = document.querySelector(".profile__add-button");
-export const addNewCardCloseButton = cardAddModal.querySelector(
-  "#add-new-card-close-button"
-);
+// export const addNewCardCloseButton = cardAddModal.querySelector(
+//  "#add-new-card-close-button"
+// );
 export const previewModalCloseButton = previewModalImage.querySelector(
   "#preview-modal-close-button"
 );
@@ -66,8 +66,8 @@ export const profileDescriptionInput = document.querySelector(
 );
 export const cardAddTitle = document.querySelector("#card-add-title");
 export const cardAddLink = document.querySelector("#card-add-link");
-// const modalImageEl = document.querySelector("#modal-image");
-// const modalTextEl = document.querySelector("#modal-text");
+export const modalImageEl = document.querySelector("#modal-image");
+export const modalTextEl = document.querySelector("#modal-text");
 const previewModalImage = document.querySelector("#preview-modal-image");
 
 /* -------------------------------------------------------------------------- */
