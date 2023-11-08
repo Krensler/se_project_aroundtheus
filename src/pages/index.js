@@ -157,9 +157,9 @@ initialCards.forEach((cardData) => {
 // FUNCTIONS
 
 function handleImageClick(cardData) {
-  const cardData = {
-    link: cardData.src,
-    name: cardData.alt,
+  const data = {
+    link: data.src,
+    name: data.alt,
   };
   imagePreviewModal.open(cardData);
 }
@@ -175,6 +175,7 @@ function renderCard(cardData) {
   cardListEl.prepend(cardElement);
 }
 
+/*
 function renderCard(cardData, cardsListElement) {
   const card = createCard(cardData, "#card-template");
   cardsListElement.prepend(card);
@@ -271,8 +272,8 @@ modalImageEl.addEventListener("click", () => {
 
 */
 
-previewModalCloseButton.addEventListener("click", () => {
-  closeModal(previewModalImage);
-});
+// previewModalCloseButton.addEventListener("click", () => {
+//  closeModal(previewModalImage);
+// });
 
 export { openModal };
