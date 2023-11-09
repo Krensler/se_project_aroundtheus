@@ -238,7 +238,7 @@ profileEditButton.addEventListener("click", () => {
   profileTitleInput.value = profileTitle.textContent;
   profileDescriptionInput.value = profileDescription.textContent;
   openModal(profileEditModal);
-  const popupForm = new PopupWithForms({
+  const popupForm = new PopupWithForm({
     popupSelector: "#profile-edit-modal",
     handleFormSubmit: handleProfileFormSubmit,
   });

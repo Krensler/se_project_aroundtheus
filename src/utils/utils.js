@@ -1,13 +1,13 @@
 export function openModal(modal) {
-  modal.classList.add("modal_opened");
+  // modal.classList.add("modal_opened");
   document.addEventListener("keydown", closeWithEscape);
-  modal.addEventListener("mousedown", closeModalOnRemoteClick);
+  // modal.addEventListener("mousedown", closeModalOnRemoteClick);
 }
 
 export function closeModal(modal) {
-  modal.classList.remove("modal_opened");
+  // modal.classList.remove("modal_opened");
   document.removeEventListener("keydown", closeWithEscape);
-  modal.removeEventListener("mousedown", closeModalOnRemoteClick);
+  // modal.removeEventListener("mousedown", closeModalOnRemoteClick);
 }
 
 export function closeWithEscape(evt) {
