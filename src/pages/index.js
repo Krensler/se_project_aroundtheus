@@ -133,7 +133,7 @@ const imagePreviewModal = new PopupWithImage("#preview-modal-image");
 imagePreviewModal.setEventListeners();
 
 const cardSection = new Section(
-  { items: initialCards, renderer: renderCard(item) },
+  { items: initialCards, renderer: (item) => renderCard(item) },
   ".cards__list"
 );
 cardSection.renderItems();
