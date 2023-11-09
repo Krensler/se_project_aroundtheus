@@ -129,10 +129,7 @@ profileEditModal.setEventListeners();
 
 const userInfo = new UserInfo(".profile__title", ".profile__description");
 
-const imagePreviewModal = new PopupWithImage(
-  "#preview-modal-image",
-  handleImageClick
-);
+const imagePreviewModal = new PopupWithImage("#preview-modal-image");
 imagePreviewModal.setEventListeners();
 
 const cardSection = new Section(

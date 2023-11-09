@@ -27,7 +27,7 @@ export default class Popup {
 
   _closeOnRemoteClick = (evt) => {
     if (evt.target === evt.currentTarget) {
-      this.close();
+      this._closeButton();
     }
   };
 
