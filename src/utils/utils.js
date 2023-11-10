@@ -1,3 +1,5 @@
+/*
+
 export function openModal(modal) {
   // modal.classList.add("modal_opened");
   document.addEventListener("keydown", closeWithEscape);
@@ -22,3 +24,5 @@ export function closeModalOnRemoteClick(evt) {
     closeModal(evt.target);
   }
 }
+
+*/

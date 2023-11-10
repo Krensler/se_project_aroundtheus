@@ -6,7 +6,7 @@ import PopupWithForm from "../components/PopupWithForm.js";
 import PopupWithImage from "../components/PopupWithImage.js";
 import Section from "../components/Section.js";
 import UserInfo from "../components/UserInfo.js";
-import { openModal, closeModal } from "../utils/utils";
+// import { openModal, closeModal } from "../utils/utils";
 import {
   initialCards,
   cardListEl,
@@ -146,28 +146,28 @@ editFormValidator.enableValidation();
 const addFormValidator = new FormValidator(settings, addNewCardEditForm);
 addFormValidator.enableValidation();
 
-initialCards.forEach((cardData) => {
-  const cardElement = createCard(cardData, "#card-template");
+initialCards.forEach((data) => {
+  const cardElement = createCard(data, "#card-template");
   cardListEl.append(cardElement);
 });
 
 // FUNCTIONS
 
-function handleImageClick(cardData) {
+function handleImageClick(card) {
   const data = {
-    link: data.src,
-    name: data.alt,
+    link: card.src,
+    name: card.alt,
   };
-  imagePreviewModal.open(cardData);
+  imagePreviewModal.open(data);
 }
 
-function createCard(cardData, cardSelector) {
-  const cardElement = new Card(cardData, cardSelector);
+function createCard(data, cardSelector) {
+  const cardElement = new Card(data, cardSelector);
   return cardElement.getView();
 }
 
-function renderCard(cardData) {
-  const card = new Card(cardData, "#card-template", handleImageClick);
+function renderCard(data) {
+  const card = new Card(data, "#card-template", handleImageClick);
   const cardElement = card.getView();
   cardListEl.prepend(cardElement);
 }
@@ -237,7 +237,7 @@ function handleCardAddSubmit(evt) {
 profileEditButton.addEventListener("click", () => {
   profileTitleInput.value = profileTitle.textContent;
   profileDescriptionInput.value = profileDescription.textContent;
-  openModal(profileEditModal);
+  profileEditModal.open();
   const popupForm = new PopupWithForm({
     popupSelector: "#profile-edit-modal",
     handleFormSubmit: handleProfileFormSubmit,
@@ -246,31 +246,25 @@ profileEditButton.addEventListener("click", () => {
 });
 
 // profileModalCloseButton.addEventListener("click", () => {
-//   closeModal(profileEditModal);
+//   profileEditModal.close();
 // });
 
 profileEditForm.addEventListener("submit", handleProfileFormSubmit);
 
 addNewCardButton.addEventListener("click", () => {
-  openModal(cardAddModal);
+  cardAddModal.open();
 });
 
 // addNewCardCloseButton.addEventListener("click", () => {
-//  closeModal(cardAddModal);
+//  cardAddModal.close();
 // });
 
 // addNewCardEditForm.addEventListener("submit", handleCardAddSubmit);
 
-/*
-
 modalImageEl.addEventListener("click", () => {
-  openModal(previewModalImage);
+  previewModalImage.open();
 });
 
-*/
-
-// previewModalCloseButton.addEventListener("click", () => {
-//  closeModal(previewModalImage);
-// });
-
-export { openModal };
+previewModalCloseButton.addEventListener("click", () => {
+  previewModalImage.close();
+});

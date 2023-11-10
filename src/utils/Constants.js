@@ -53,7 +53,7 @@ export const profileDescription = document.querySelector(
 );
 export const addNewCardButton = document.querySelector(".profile__add-button");
 // export const addNewCardCloseButton = cardAddModal.querySelector(
-//  "#add-new-card-close-button"
+//   "#add-new-card-close-button"
 // );
 export const previewModalCloseButton = previewModalImage.querySelector(
   "#preview-modal-close-button"
