@@ -82,10 +82,10 @@ function renderCard(data) {
 
 function handleProfileFormSubmit(data) {
   userInfo.setUserInfo(data);
-
+  /*
   profileTitle.textContent = profileTitleInput.value;
   profileDescription.textContent = profileDescriptionInput.value;
-
+*/
   profileEditModal.close();
 }
 
