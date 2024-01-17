@@ -1,3 +1,5 @@
+import { previewModalImage } from "../utils/Constants";
+
 export default class Card {
   constructor(data, cardSelector, handleImageClick) {
     this._name = data.name;
@@ -33,7 +35,7 @@ export default class Card {
     modalImageEl.src = this._link;
     modalImageEl.alt = this._name;
     modalTextEl.textContent = this._name;
-    openModal(previewModalImage);
+    previewModalImage.open();
   }
 
   _getElement() {

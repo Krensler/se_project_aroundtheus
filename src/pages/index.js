@@ -30,10 +30,13 @@ import {
 const cardAddModal = new PopupWithForm("#card-add-modal", handleCardAddSubmit);
 cardAddModal.setEventListeners();
 
-const profileEditModal = new PopupWithForm("#profile-edit-modal", (data) => {
-  userInfo.setUserInfo(data);
-  profileEditModal.close();
-});
+const profileEditModal = new PopupWithForm(
+  "#profile-edit-modal",
+  (title, description) => {
+    userInfo.setUserInfo(title, description);
+    profileEditModal.close();
+  }
+);
 profileEditModal.setEventListeners();
 
 const userInfo = new UserInfo(".profile__title", ".profile__description");
