@@ -83,8 +83,10 @@ function renderCard(data) {
 /*                               Event Handlers                               */
 /* -------------------------------------------------------------------------- */
 
-function handleProfileFormSubmit(data) {
-  userInfo.setUserInfo(data);
+function handleProfileFormSubmit(evt) {
+  evt.preventDefault();
+  console.log(profileTitleInput.value);
+  userInfo.setUserInfo({});
   /*
   profileTitle.textContent = profileTitleInput.value;
   profileDescription.textContent = profileDescriptionInput.value;
@@ -95,6 +97,7 @@ function handleProfileFormSubmit(data) {
 function handleCardAddSubmit() {
   const name = cardAddTitle.value;
   const link = cardAddLink.value;
+  console.log(name, link);
   renderCard({ name, link }, cardListEl);
   cardAddModal.close();
 
